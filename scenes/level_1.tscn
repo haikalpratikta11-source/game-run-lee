@@ -1,0 +1,84 @@
+[gd_scene format=4 uid="uid://dy8mmcccgq6ys"]
+
+[ext_resource type="Texture2D" uid="uid://cycgfdfy083jp" path="res://assets/background.png" id="1_wae8j"]
+[ext_resource type="Texture2D" uid="uid://bq3rbtny63ifr" path="res://assets/tile.png" id="2_ha73p"]
+[ext_resource type="PackedScene" uid="uid://dkxhp1ypkcwos" path="res://scenes/coin.tscn" id="3_vcx5n"]
+[ext_resource type="PackedScene" uid="uid://dkm0h0voe65jy" path="res://scenes/spike.tscn" id="4_56dhn"]
+[ext_resource type="PackedScene" uid="uid://cqj2a05tt7es0" path="res://scenes/goal.tscn" id="5_ax3dk"]
+[ext_resource type="PackedScene" uid="uid://bx73fexnoybur" path="res://scenes/player.tscn" id="6_q2dsb"]
+[ext_resource type="Script" uid="uid://by2tvy0t36qwi" path="res://scenes/pause.gd" id="7_p3r0x"]
+[ext_resource type="Script" uid="uid://dlln4rudk58bm" path="res://scenes/label.gd" id="8_5xqnf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
+texture = ExtResource("2_ha73p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_pa2nc"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5xbjy")
+
+[node name="level1" type="Node2D" unique_id=1903113308]
+position = Vector2(4, -174)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1949802772]
+position = Vector2(-26, 174)
+scale = Vector2(1.6587499, 1.6517855)
+texture = ExtResource("1_wae8j")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=180936768]
+position = Vector2(-8, 139)
+tile_map_data = PackedByteArray("AAAAABUAAAAAAAAAAAACABUAAAAAAAAAAAABABUAAAAAAAAAAAADABUAAAAAAAAAAAAFABUAAAAAAAAAAAAEABUAAAAAAAAAAAAAABYAAAAAAAAAAAACABQAAAAAAAAAAAADABQAAAAAAAAAAAAEABQAAAAAAAAAAAABABQAAAAAAAAAAAAFABQAAAAAAAAAAAAkABUAAAAAAAAAAAAlABUAAAAAAAAAAAAlABQAAAAAAAAAAAAmABQAAAAAAAAAAAAkABQAAAAAAAAAAAAmABYAAAAAAAAAAAAlABYAAAAAAAAAAAAkABYAAAAAAAAAAAAFABcAAAAAAAAAAAAEABcAAAAAAAAAAAADABcAAAAAAAAAAAADABYAAAAAAAAAAAACABYAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAAAABcAAAAAAAAAAAACABcAAAAAAAAAAAAFABYAAAAAAAAAAAAEABYAAAAAAAAAAAAlABcAAAAAAAAAAAAkABcAAAAAAAAAAAD//xAAAAAAAAAAAAD//w8AAAAAAAAAAAAoABUAAAAAAAAAAAAnABUAAAAAAAAAAAAmABUAAAAAAAAAAAAnABQAAAAAAAAAAAAoABQAAAAAAAAAAAApABQAAAAAAAAAAAApABUAAAAAAAAAAAApABYAAAAAAAAAAAAoABYAAAAAAAAAAAAnABYAAAAAAAAAAAAnABcAAAAAAAAAAAAmABcAAAAAAAAAAAAoABcAAAAAAAAAAAApABcAAAAAAAAAAAAoAAYAAAAAAAAAAAAoAAUAAAAAAAAAAAAoAAQAAAAAAAAAAAAoAAMAAAAAAAAAAAAoAAIAAAAAAAAAAAAoAAEAAAAAAAAAAAAoAAcAAAAAAAAAAAAoAAgAAAAAAAAAAAAoAAkAAAAAAAAAAAAoAAoAAAAAAAAAAAAoAAsAAAAAAAAAAAAoAAwAAAAAAAAAAAAoAA0AAAAAAAAAAAAoAA4AAAAAAAAAAAAoAA8AAAAAAAAAAAAoABAAAAAAAAAAAAAoABEAAAAAAAAAAAAoABMAAAAAAAAAAAAoABIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAD//w4AAAAAAAAAAAD//xMAAAAAAAAAAAAAABQAAAAAAAAAAAD//xQAAAAAAAAAAAD//xUAAAAAAAAAAAD//xYAAAAAAAAAAAD//xcAAAAAAAAAAAD//xEAAAAAAAAAAAD//xIAAAAAAAAAAAD+/xMAAAAAAAAAAAAEABEAAAAAAAAAAAAFABEAAAAAAAAAAAAGABEAAAAAAAAAAAAHABEAAAAAAAAAAAAIABEAAAAAAAAAAAANAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAVAAwAAAAAAAAAAAAWAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAbAAkAAAAAAAAAAAAcAAkAAAAAAAAAAAAdAAkAAAAAAAAAAGAeAAkAAAAAAAAAAGAnAAUAAAAAAAAAAGAmAAUAAAAAAAAAAGAlAAUAAAAAAAAAAGAkAAUAAAAAAAAAAGAjAAUAAAAAAAAAAGAiAAUAAAAAAAAAAGAfAAkAAAAAAAAAAGAgAAkAAAAAAAAAAGADAAQAAAAAAAAAAGAEAAQAAAAAAAAAAGAFAAQAAAAAAAAAAGAGAAQAAAAAAAAAAGAHAAQAAAAAAAAAAGAIAAQAAAAAAAAAAGALAAgAAAAAAAAAAGAMAAgAAAAAAAAAAGANAAgAAAAAAAAAAGAOAAgAAAAAAAAAAGAPAAgAAAAAAAAAAGAdAA8AAAAAAAAAAGAeAA8AAAAAAAAAAGAfAA8AAAAAAAAAAGA=")
+tile_set = SubResource("TileSet_pa2nc")
+
+[node name="Coin" parent="." unique_id=93434593 instance=ExtResource("3_vcx5n")]
+position = Vector2(471, 587)
+
+[node name="Coin2" parent="." unique_id=2071828018 instance=ExtResource("3_vcx5n")]
+position = Vector2(120, 225)
+
+[node name="Coin3" parent="." unique_id=285385442 instance=ExtResource("3_vcx5n")]
+position = Vector2(1211, 738)
+
+[node name="Spike" parent="." unique_id=1393284191 instance=ExtResource("4_56dhn")]
+position = Vector2(241, 676)
+
+[node name="Spike2" parent="." unique_id=1066665994 instance=ExtResource("4_56dhn")]
+position = Vector2(649, 515)
+
+[node name="Goal" parent="." unique_id=1740702630 instance=ExtResource("5_ax3dk")]
+position = Vector2(1231, 283)
+next_scene = "uid://x71duymxmnp0"
+
+[node name="Player" parent="." unique_id=705362503 instance=ExtResource("6_q2dsb")]
+position = Vector2(38, 721)
+
+[node name="Pause" type="CanvasLayer" parent="." unique_id=2104496820]
+process_mode = 3
+script = ExtResource("7_p3r0x")
+
+[node name="Label" type="Label" parent="Pause" unique_id=147260296]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -11.5
+offset_right = 25.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1927166487]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=771934649]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("8_5xqnf")

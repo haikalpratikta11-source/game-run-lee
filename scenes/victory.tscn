@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://r828vgql8bb8"]
+
+[ext_resource type="Script" uid="uid://uc5e6ygrta86" path="res://victory.gd" id="1_faxov"]
+[ext_resource type="Texture2D" uid="uid://cycgfdfy083jp" path="res://assets/background.png" id="2_hl81x"]
+[ext_resource type="Texture2D" uid="uid://rxixbh0mtpvl" path="res://assets/Lee Jihoon 2.png" id="3_hl81x"]
+
+[node name="Victory" type="Control" unique_id=1104936354]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_faxov")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2037781226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hl81x")
+expand_mode = 1
+
+[node name="Tittle" type="Label" parent="." unique_id=139919532]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -288.0
+offset_right = 35.5
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "KAMU MENANG"
+horizontal_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="." unique_id=2009047832]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -208.0
+offset_right = 20.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CoinLabel" type="Label" parent="Stats" unique_id=208485040]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Total Koin : 0 "
+horizontal_alignment = 1
+
+[node name="DeathLabel" type="Label" parent="Stats" unique_id=1125730286]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Total Mati : 0 "
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1840364852]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -98.0
+offset_right = 20.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="RetryButton" type="Button" parent="Buttons" unique_id=2014315630]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ulangi "
+
+[node name="ExitMenuButton" type="Button" parent="Buttons" unique_id=459594450]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Kembali ke menu"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1401661692]
+layout_mode = 1
+offset_left = 103.0
+offset_top = 95.0
+offset_right = 564.0
+offset_bottom = 718.0
+texture = ExtResource("3_hl81x")
+expand_mode = 1
+
+[connection signal="pressed" from="Buttons/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitMenuButton" to="." method="_on_exit_menu_button_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://d00ij11p63mh6"]
+
+[ext_resource type="Script" uid="uid://dnlhw7ow1m2vk" path="res://lose.gd" id="1_r6nsb"]
+[ext_resource type="Texture2D" uid="uid://cycgfdfy083jp" path="res://assets/background.png" id="2_10rtl"]
+[ext_resource type="Texture2D" uid="uid://cimalv4ev32l0" path="res://assets/lee jihoon 3.jpeg" id="3_10rtl"]
+
+[node name="lose" type="Control" unique_id=1417046540]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6nsb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1312941294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_10rtl")
+expand_mode = 1
+
+[node name="Tittle" type="Label" parent="." unique_id=732187266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -267.5
+offset_right = 46.0
+offset_bottom = -244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="." unique_id=1644175854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -208.0
+offset_right = 223.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Kamu kalah karena mati sebanyak 15x"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=1854756173]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -138.0
+offset_right = 28.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "ulangi"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1655325751]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 213.0
+offset_right = 455.0
+offset_bottom = 663.0
+texture = ExtResource("3_10rtl")
+expand_mode = 1
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

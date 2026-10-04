@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://boxaniqqc4g2g"]
+
+[ext_resource type="Script" uid="uid://bi2fbdxbvlj25" path="res://main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cycgfdfy083jp" path="res://assets/background.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://unxe6t7r00et" path="res://assets/Lee Jihoon.png" id="3_bqqt6"]
+
+[node name="MainMenu" type="Control" unique_id=1604873587]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=627384340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bqqt6")
+
+[node name="tittle" type="Label" parent="." unique_id=845529280]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 211.0
+offset_right = -3.0
+offset_bottom = 278.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "RUN LEE"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1094838417]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1918164957]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+text = "Mulai game"
+
+[node name="Exit" type="Button" parent="Buttons" unique_id=409303496]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+text = "Keluar"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1538108934]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 138.0
+offset_right = 482.0
+offset_bottom = 716.0
+texture = ExtResource("3_bqqt6")
+expand_mode = 1
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
