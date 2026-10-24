@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*uid://cdi0wangx5myn"
 Fx="*uid://psjbkxmo06yn"
+Audio="*uid://c3gvcuhrt26f7"
 
 [display]
 

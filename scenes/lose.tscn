@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d00ij11p63mh6"]
 
-[ext_resource type="Script" uid="uid://dnlhw7ow1m2vk" path="res://lose.gd" id="1_r6nsb"]
+[ext_resource type="Script" uid="uid://dnlhw7ow1m2vk" path="res://script/lose.gd" id="1_r6nsb"]
 [ext_resource type="Texture2D" uid="uid://cycgfdfy083jp" path="res://assets/background.png" id="2_10rtl"]
 [ext_resource type="Texture2D" uid="uid://cimalv4ev32l0" path="res://assets/lee jihoon 3.jpeg" id="3_10rtl"]
 

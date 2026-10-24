@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 const SPEED := 230.0
@@ -44,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		dash_t = 0.15
 		dash_cd = 0.6
 		Fx.burst(global_position, PURPLE, 12, 140.0, 0.3, Vector2(-face, 0), 40.0, 4.0, 0.0)
+		Audio.play("dash")
 
 	if dash_t > 0.0:
 		dash_t -= delta
@@ -76,11 +78,13 @@ func _physics_process(delta: float) -> void:
 			buffer = 0.0
 			coyote = 0.0
 			Fx.burst(_feet(), PURPLE, 8, 90.0, 0.35, Vector2.UP, 70.0, 4.0, 300.0)
+			Audio.play("jump")
 		elif jumps < 2:
 			velocity.y = AIR_JUMP_V
 			jumps = 2
 			buffer = 0.0
 			Fx.burst(_feet(), WHITE, 14, 120.0, 0.4, Vector2.DOWN, 90.0, 4.0, 200.0)
+			Audio.play("double_jump")
 
 	if Input.is_action_just_released("jump") and velocity.y < -250.0:
 		velocity.y = -250.0
@@ -97,6 +101,7 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor() and not was_on_floor and vy_before > 300.0:
 		Fx.burst(_feet(), PURPLE, 10, 110.0, 0.4, Vector2.UP, 80.0, 4.0, 300.0)
+		Audio.play("land")
 
 	_update_animation()
 
@@ -120,6 +125,7 @@ func die() -> void:
 	dead = true
 	Game.deaths += 1
 	Fx.burst(global_position, RED, 30, 260.0, 0.7, Vector2.UP, 180.0, 4.0, 600.0)
+	Audio.play("die")
 	visible = false
 	await get_tree().create_timer(0.6).timeout
 	if Game.deaths >= Game.MAX_DEATHS:                  # (2) baru

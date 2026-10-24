@@ -2,6 +2,7 @@ extends Control
 # Pasang di root scene Lose (Control)
 
 func _ready() -> void:
+	Audio.play("lose")
 	$Message.text = "Kamu kalah karena mati sebanyak %dx" % Game.deaths
 	$RetryButton.grab_focus()   # supaya bisa dipilih dengan keyboard
 

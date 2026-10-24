@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dkm0h0voe65jy" path="res://scenes/spike.tscn" id="3_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://cqj2a05tt7es0" path="res://scenes/goal.tscn" id="4_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://bx73fexnoybur" path="res://scenes/player.tscn" id="5_6cvei"]
-[ext_resource type="Script" uid="uid://by2tvy0t36qwi" path="res://scenes/pause.gd" id="7_ne2mo"]
-[ext_resource type="Script" uid="uid://dlln4rudk58bm" path="res://scenes/label.gd" id="8_6cvei"]
+[ext_resource type="Script" uid="uid://by2tvy0t36qwi" path="res://script/pause.gd" id="7_ne2mo"]
+[ext_resource type="Script" uid="uid://dlln4rudk58bm" path="res://script/label.gd" id="8_6cvei"]
+[ext_resource type="Script" uid="uid://dhg6b8w0sev50" path="res://script/tutorial_overlay.gd" id="8_que50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("1_b4j7a")
@@ -103,21 +104,8 @@ position = Vector2(38, 721)
 [node name="Pause" type="CanvasLayer" parent="." unique_id=606077762]
 script = ExtResource("7_ne2mo")
 
-[node name="Label" type="Label" parent="Pause" unique_id=484315016]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.5
-offset_top = -11.5
-offset_right = 87.5
-offset_bottom = 38.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "PAUSE"
-horizontal_alignment = 1
+[node name="Tutorial" type="CanvasLayer" parent="Pause" unique_id=1437970163]
+script = ExtResource("8_que50")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=981394538]
 
