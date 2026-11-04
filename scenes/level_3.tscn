@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://by2tvy0t36qwi" path="res://script/pause.gd" id="7_p3r0x"]
 [ext_resource type="Script" uid="uid://dlln4rudk58bm" path="res://script/label.gd" id="8_5xqnf"]
 [ext_resource type="Script" uid="uid://dhg6b8w0sev50" path="res://script/tutorial_overlay.gd" id="8_ha73p"]
+[ext_resource type="Script" uid="uid://bbxk0h1cpgtww" path="res://scenes/spike_head.gd" id="10_56dhn"]
+[ext_resource type="Texture2D" uid="uid://t4l0m45ir60x" path="res://assets/Idle.png" id="11_ax3dk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("2_ha73p")
@@ -20,6 +22,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xbjy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha73p"]
+size = Vector2(54, 52)
 
 [node name="level1" type="Node2D" unique_id=1903113308]
 position = Vector2(4, -174)
@@ -160,7 +165,6 @@ position = Vector2(840, 866)
 
 [node name="Goal" parent="." unique_id=1740702630 instance=ExtResource("5_ax3dk")]
 position = Vector2(22, 762)
-next_scene = "uid://r828vgql8bb8"
 
 [node name="Player" parent="." unique_id=705362503 instance=ExtResource("6_q2dsb")]
 position = Vector2(66, 258)
@@ -178,3 +182,27 @@ script = ExtResource("8_ha73p")
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("8_5xqnf")
+
+[node name="SpikeHead" type="Node2D" parent="." unique_id=432879143]
+script = ExtResource("10_56dhn")
+
+[node name="Spike" parent="SpikeHead" unique_id=1275903481 instance=ExtResource("4_56dhn")]
+
+[node name="CollisionShape2D" parent="SpikeHead/Spike" index="0" unique_id=863235513]
+shape = SubResource("RectangleShape2D_ha73p")
+
+[node name="Sprite2D" parent="SpikeHead/Spike" index="1" unique_id=1355314287]
+texture = ExtResource("11_ax3dk")
+
+[node name="PathPoints" type="Node2D" parent="SpikeHead" unique_id=1788540240]
+
+[node name="Marker2D" type="Marker2D" parent="SpikeHead/PathPoints" unique_id=693295276]
+position = Vector2(200, 750)
+
+[node name="Marker2D2" type="Marker2D" parent="SpikeHead/PathPoints" unique_id=1086519828]
+position = Vector2(800, 750)
+
+[node name="Marker2D3" type="Marker2D" parent="SpikeHead/PathPoints" unique_id=1855140107]
+position = Vector2(800, 550)
+
+[editable path="SpikeHead/Spike"]
