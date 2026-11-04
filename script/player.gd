@@ -128,10 +128,4 @@ func die() -> void:
 	Audio.play("die")
 	visible = false
 	await get_tree().create_timer(0.6).timeout
-	if Game.deaths >= Game.MAX_DEATHS:                  # (2) baru
-		get_tree().change_scene_to_file.call_deferred("res://scenes/lose.tscn")
-		return
-	global_position = spawn_pos
-	velocity = Vector2.ZERO
-	visible = true
-	dead = false
+	get_tree().change_scene_to_file.call_deferred("res://scenes/lose.tscn")

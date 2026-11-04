@@ -7,7 +7,8 @@ var _resume_button: Button
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 50
-	Game.coins_at_level_start = Game.coins
+	var level_node: Node = owner if owner != null else get_parent()
+	Game.start_level(level_node.scene_file_path)
 	_build_ui()
 	_root.visible = false
 	_show_first_tutorial.call_deferred()
@@ -80,8 +81,7 @@ func _on_controls() -> void:
 	TutorialOverlay.open(self)
 
 func _restart() -> void:
-	get_tree().paused = false
-	Game.coins = Game.coins_at_level_start    
+	get_tree().paused = false   
 	get_tree().reload_current_scene()
 
 func _on_main_menu() -> void:

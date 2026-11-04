@@ -52,7 +52,6 @@ position = Vector2(649, 515)
 
 [node name="Goal" parent="." unique_id=1740702630 instance=ExtResource("5_ax3dk")]
 position = Vector2(1231, 283)
-next_scene = "uid://x71duymxmnp0"
 
 [node name="Player" parent="." unique_id=705362503 instance=ExtResource("6_q2dsb")]
 position = Vector2(38, 721)
