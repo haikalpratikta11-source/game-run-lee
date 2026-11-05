@@ -16,3 +16,9 @@ func _on_retry_button_pressed() -> void:
 		path = Game.LEVELS[0]
 	Game.reset()
 	get_tree().change_scene_to_file(path)
+	
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+
+func _on_mainmenu_pressed() -> void:
+		get_tree().change_scene_to_file(("res://scenes/main_menu.tscn"))
